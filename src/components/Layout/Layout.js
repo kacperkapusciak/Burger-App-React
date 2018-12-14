@@ -1,11 +1,11 @@
 import React from 'react';
-
+import Main from '../../styled/Main';
 const layout = ( props ) => (
   <>
     <div>Toolbar, SideDrawer, Backdrop</div>
-    <main>
+    <Main>
       {props.children}
-    </main>
+    </Main>
   </>
 );
 
