@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BurgerWrapper = styled.div`
+const BurgerWrapper = styled.div`
   width: 100%;
   margin: auto;
   height: 250px;
@@ -23,3 +23,5 @@ export const BurgerWrapper = styled.div`
     height: 600px;
   }
 `;
+
+export default BurgerWrapper;

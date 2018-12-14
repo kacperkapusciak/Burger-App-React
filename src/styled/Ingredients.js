@@ -100,7 +100,7 @@ export const Cheese = styled.div`
   border-radius: 20px;
 `;
 
-export default Salad = styled.div`
+export const Salad = styled.div`
   width: 85%;
   height: 7%;
   margin: 2% auto;
