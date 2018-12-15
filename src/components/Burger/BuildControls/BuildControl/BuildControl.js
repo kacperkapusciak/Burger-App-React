@@ -4,8 +4,11 @@ import {Control, Label, Less, More} from '../../../../styled/Controls';
 const buildControl = props => (
   <Control>
     <Label>{props.label}</Label>
-    <Less>Less</Less>
-    <More onClick={props.added}>More</More>
+    <Less 
+      onClick={props.removed} 
+      disabled={props.disabled}>Less</Less>
+    <More 
+      onClick={props.added}>More</More>
   </Control>
 );
 
