@@ -4,9 +4,6 @@ export const Control = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 20px; 
-  margin: 5px;
-  color: white;
 `;
 
 export const Button = styled.button`
@@ -40,19 +37,17 @@ export const Label = styled.div`
   color: black;
 `;
 
-export const Less = styled(Control)`  
-  cursor: pointer;
+export const Less = styled(Button)`  
   background-color: #d39952;
-  border: 1px solid #8f5e1e;
+  color: white;
   :hover, :active {
     background-color: #DAA972;
   }
 `;
 
-export const More = styled(Control)`
-  cursor: pointer; 
+export const More = styled(Button)`
   background-color: #8f5e1e;
-  border: 1px solid #8f5e1e;
+  color: white;
   :hover, :active {
     background-color: #99703F;
   }  
