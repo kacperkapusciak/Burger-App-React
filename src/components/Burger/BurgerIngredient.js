@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BreadBottom, BreadTop, Seeds1, Seeds2, Meat, Cheese, Salad, Bacon} from '../../../styled/Ingredients';
+import {BreadBottom, BreadTop, Seeds1, Seeds2, Meat, Cheese, Salad, Bacon} from '../../styled/Burger/Ingredients';
 import PropTypes from 'prop-types';
 
 class BurgerIngredient extends Component {

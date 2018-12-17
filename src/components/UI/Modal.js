@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalWrapper from '../../../styled/ModalWrapper';
+import ModalWrapper from '../../styled/UI/ModalWrapper';
 
 const modal = props => (
   <ModalWrapper style={{

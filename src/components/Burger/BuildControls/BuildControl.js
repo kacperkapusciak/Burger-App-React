@@ -1,5 +1,5 @@
 import React from 'react';
-import {Control, Label, Less, More} from '../../../../styled/Controls';
+import {Control, Label, Less, More} from '../../../styled/Burger/BuildControls/Controls';
 
 const buildControl = props => (
   <Control>
