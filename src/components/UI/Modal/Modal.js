@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalWrapper from '../../../styled/BurgerWrapper';
+import ModalWrapper from '../../../styled/ModalWrapper';
 
 const modal = props => (
   <ModalWrapper>
