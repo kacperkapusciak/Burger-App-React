@@ -1,4 +1,5 @@
 import React from 'react';
+import Backdrop from './Backdrop';
 import styled from 'styled-components';
 
 const ModalWrapper = styled.div`
@@ -21,12 +22,15 @@ const ModalWrapper = styled.div`
 `; 
 
 const modal = props => (
-  <ModalWrapper style={{
-    transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-    opacity: props.show ? '1' : '0'
-  }}>
-    {props.children}
-  </ModalWrapper>
+  <>
+    <Backdrop show={props.show} clicked={props.modalClosed}/>
+    <ModalWrapper style={{
+      transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+      opacity: props.show ? '1' : '0'
+    }}>
+      {props.children}
+    </ModalWrapper>
+  </>
 );
 
 export default modal;
