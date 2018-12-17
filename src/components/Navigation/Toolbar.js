@@ -1,10 +1,11 @@
 import React from 'react';
+import Logo from '../Logo';
 import {Header, Nav} from '../../styled/Navigation/ToolbarStyling';
 
 const toolbar = props => (
   <Header>
     <div>MENU</div>
-    <div>LOGO</div>
+    <Logo />
     <Nav>
       ...
     </Nav>
