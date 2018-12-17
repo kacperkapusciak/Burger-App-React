@@ -1,6 +1,7 @@
 import React from 'react';
-import ControlsArea from '../../../styled/ControlsArea';
-import BuildControl from './BuildControl/BuildControl';
+import ControlsArea from '../../../styled/Burger/BuildControls/ControlsArea';
+import BuildControl from './BuildControl';
+import OrderButton from '../../../styled/Burger/BuildControls/OrderButton';
 
 const controls = [
   {label: 'Salad', type: 'salad'},
@@ -19,7 +20,10 @@ const buildControls = props => (
         added={() => props.ingredientAdded(ctrl.type)}
         removed={() => props.ingredientRemoved(ctrl.type)}
         disabled={props.disabled[ctrl.type]} />
-    ))}
+        ))}
+      <OrderButton 
+        disabled={!props.purchasable}
+        onClick={props.ordered}>ORDER NOW</OrderButton>
   </ControlsArea>
 );
 
