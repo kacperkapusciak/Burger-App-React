@@ -5,7 +5,7 @@ import burgerLogo from '../assets/img/burger-logo.png';
 const LogoWrapper = styled.div`
   background-color: white;
   padding: 8px;
-  height: 80%;
+  height: 100%;
   box-sizing: border-box;
   border-radius: 10px;
 `;
@@ -15,7 +15,7 @@ const Img = styled.img`
 `;
 
 const logo = props => (
-  <LogoWrapper>
+  <LogoWrapper style={{height: props.height}}>
     <Img src={burgerLogo} alt="Logo"/>
   </LogoWrapper>
 );

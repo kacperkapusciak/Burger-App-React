@@ -6,7 +6,7 @@ import NavItems from './NavItems';
 const toolbar = props => (
   <Header>
     <div>MENU</div>
-    <Logo />
+    <Logo height="80%"/>
     <Nav>
       <NavItems />
     </Nav>

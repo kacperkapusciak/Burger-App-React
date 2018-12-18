@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NavItem from './NavigationItems/NavItem';
 
-const Nav = styled.ul`
+export const Nav = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
