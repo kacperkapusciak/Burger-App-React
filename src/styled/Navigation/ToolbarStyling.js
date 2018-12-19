@@ -17,4 +17,8 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   height: 100%;
+
+  @media (max-width: 499px) {
+    display: none;
+  }
 `;

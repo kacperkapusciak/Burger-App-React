@@ -1,15 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import NavItem from './NavigationItems/NavItem';
-
-export const Nav = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  height: 100%;
-`;
+import {Nav} from '../../styled/Navigation/NavStyling';
 
 const navigationItems = () => (
   <Nav>

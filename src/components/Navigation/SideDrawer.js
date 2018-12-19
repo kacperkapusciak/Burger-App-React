@@ -1,7 +1,8 @@
 import React from 'react';
 import Logo from '../Logo';
-import NavItems, {Nav} from '../Navigation/NavItems';
+import NavItems from '../Navigation/NavItems';
 import styled from 'styled-components';
+import {Nav} from '../../styled/Navigation/NavStyling';
 
 const Drawer = styled.div`
   position: fixed;
@@ -25,7 +26,7 @@ const sideDrawer = () => {
 
   return (
     <Drawer>
-      <Logo height="11%"/>
+      <Logo height="11%" marginBottom="32px"/>
       <Nav>
         <NavItems />
       </Nav>

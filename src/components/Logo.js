@@ -15,7 +15,9 @@ const Img = styled.img`
 `;
 
 const logo = props => (
-  <LogoWrapper style={{height: props.height}}>
+  <LogoWrapper style={{
+          height: props.height, 
+          marginBottom: props.marginBottom}}>
     <Img src={burgerLogo} alt="Logo"/>
   </LogoWrapper>
 );
