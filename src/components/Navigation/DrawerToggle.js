@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Toggle = styled.div`
-
   width: 40px;
   height: 100%;
   display: flex;
