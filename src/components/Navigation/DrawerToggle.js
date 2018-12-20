@@ -1,7 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Toggle = styled.div`
+
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+`;
+
+const Hamburger = styled.div`
+  width: 90%;
+  height: 3px;
+  background-color: white;
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+`;
 
 const drawerToggle = props => (
-  <div onClick={props.clicked}>MENU</div>
+  <Toggle onClick={props.clicked}>
+    <Hamburger />
+    <Hamburger />
+    <Hamburger />
+  </Toggle>
 );
 
 export default drawerToggle;
