@@ -2,14 +2,15 @@ import React from 'react';
 import Button from '../../styled/UI/Button';
 
 const orderSummary = props => {
-  const ingredientSummary = Object.keys(props.ingredients)
+    const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
       return (<li key={igKey}>
                 <span style={{textTransform: 'capitalize'}}>{igKey}</span>: {props.ingredients[igKey]}
               </li>);
     });
-  return (
-    <>
+
+    return (
+      <>
       <h3>Your Order</h3>
       <p>A delicious burger with the following ingredients:</p>
       <ul>
@@ -20,7 +21,8 @@ const orderSummary = props => {
       <Button danger onClick={props.cancelled}>CANCEL</Button>
       <Button success onClick={props.accepted}>CONTINUE</Button>
     </>
-  );
-};
+    );
+  }
+
 
 export default orderSummary;
