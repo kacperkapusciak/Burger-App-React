@@ -67,9 +67,8 @@ export const Drawer = styled.div`
   background-color: white;
   padding: 32px 16px;
   box-sizing: border-box;
-  /*transition: transform 0.3s ease-out;
-  transition: translateX(-100%) 0.3s ease-out; */
-  display: ${props => props.open ? "block" : "none"};
+  transition: transform 0.3s ease-out; 
+  transform: translateX(${props => props.open ? "0" : "-100%" });
 
   @media (min-width: 500px) {
     display: none;
