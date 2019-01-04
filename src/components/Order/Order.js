@@ -9,11 +9,11 @@ const order = props => (
 );
 
 const StyledOrder = styled.div`
-  width: 100%;
+  width: 80%;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   box-sizing: border-box;
 `;
 export default order;
