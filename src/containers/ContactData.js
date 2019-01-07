@@ -6,7 +6,7 @@ import Input from '../components/UI/Input';
 import axios from '../axios-orders';
 class ContactData extends Component {
   state = {
-    orderForm = {
+    orderForm: {
       name: {
         elementType: 'input',
         elementConfig: {
