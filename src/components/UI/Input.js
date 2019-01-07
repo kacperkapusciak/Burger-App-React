@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const input = props => {
   let inputElement = null;
-  switch (props.inputtype) {
+  switch (props.elementType) {
     case ('input'):
-      inputElement = <Input {...props}/>;
+      inputElement = <Input {...props.elementConfig} value={props.value}/>;
       break;
     case ('textarea'):
-      inputElement = <Textarea {...props}/>;
+      inputElement = <Textarea {...props.elementConfig} value={props.value}/>;
       break;
     default: 
-      inputElement = <Input {...props}/>;
+      inputElement = <Input {...props.elementConfig} value={props.value}/>;
   }
   return (
     <InputWrapper>
