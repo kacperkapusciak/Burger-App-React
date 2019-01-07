@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from '../styled/UI/Button';
 import Spinner from '../components/UI/Spinner';
+import Input from '../components/UI/Input';
 import axios from '../axios-orders';
-
 class ContactData extends Component {
   state = {
     name: '',
@@ -43,10 +43,10 @@ class ContactData extends Component {
   render() {
     let form = (
       <form>
-        <Input type="text"  name="name" placeholder="Your Name" />
-        <Input type="email"  name="email" placeholder="Your Mail" />
-        <Input type="text"  name="street" placeholder="Street" />
-        <Input type="text"  name="zipcode" placeholder="Postal code" />
+        <Input inputtype="input" type="text"  name="name" placeholder="Your Name" />
+        <Input inputtype="input" type="email"  name="email" placeholder="Your Mail" />
+        <Input inputtype="input" type="text"  name="street" placeholder="Street" />
+        <Input inputtype="input" type="text"  name="zipcode" placeholder="Postal code" />
         <Button success onClick={this.orderHandler}>ORDER</Button>
       </form>
     );
@@ -74,7 +74,5 @@ const Wrapper = styled.div`
     width: 500px;
   }
 `;
-const Input = styled.input`
-  display: block;
-`;
+
 export default ContactData;
