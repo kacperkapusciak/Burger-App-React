@@ -10,6 +10,17 @@ const input = props => {
     case ('textarea'):
       inputElement = <Textarea {...props.elementConfig} value={props.value}/>;
       break;
+    case ('select'):
+      inputElement = (
+      <Select value={props.value}>
+        {props.elementConfig.options.map(option => (
+          <option key={option.value} value={option.value}>
+            {option.displayValue}
+          </option>
+        ))}
+      </Select>
+      );
+      break;
     default: 
       inputElement = <Input {...props.elementConfig} value={props.value}/>;
   }
@@ -33,7 +44,7 @@ const Label = styled.label`
   display: block;
   margin-bottom: 8px;
 `;
-
+//TODO: figure out how to do it by one styled component
 const Input = styled.input`
   outline: none;
   border: 1px solid #ccc;
@@ -49,6 +60,21 @@ const Input = styled.input`
   }
 `;
 const Textarea = styled.textarea`
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: white;
+  font: inherit;
+  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  :focus {
+    background-color: #ccc;
+    outline: none;
+  }
+`;
+
+const Select = styled.select`
   outline: none;
   border: 1px solid #ccc;
   background-color: white;
