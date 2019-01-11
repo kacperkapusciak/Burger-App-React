@@ -15,6 +15,10 @@ const Button = styled.button`
     margin-left: 0;
     padding-left: 0;
   }
+  &:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
 `;
 
 export default Button;
