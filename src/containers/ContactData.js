@@ -18,20 +18,22 @@ class ContactData extends Component {
           required: true
         },
         valid: false,
-        touched: false
+        touched: false,
+        errorMessage: "Please enter your name" 
       },
       street: {
         elementType: 'input',
         elementConfig: {
           type: 'text',
-          placeholder: 'Street'
+          placeholder: 'Address'
         },
         value: '',
         validation: {
           required: true,
         },
         valid: false,
-        touched: false
+        touched: false,
+        errorMessage: "Please enter your address" 
       },
       zipCode: {
         elementType: 'input',
@@ -46,7 +48,8 @@ class ContactData extends Component {
           maxLength: 5
         },
         valid: false,
-        touched: false
+        touched: false,
+        errorMessage: "ZIP-code must be exacly 5 digits" 
       },
       country: {
         elementType: 'input',
@@ -59,7 +62,8 @@ class ContactData extends Component {
           required: true
         },
         valid: false,
-        touched: false 
+        touched: false,
+        errorMessage: "Please enter your country"  
       },
       email: {
         elementType: 'input',
@@ -72,7 +76,8 @@ class ContactData extends Component {
           required: true
         },
         valid: false,
-        touched: false   
+        touched: false,
+        errorMessage: "Invalid email format"   
       },
       deliveryMethod: {
         elementType: 'select',
@@ -163,6 +168,7 @@ class ContactData extends Component {
             value={element.config.value}
             invalid={!element.config.valid}
             touched={element.config.touched}
+            errorMessage={element.config.errorMessage}
             changed={(event) => this.inputChangedHandler(event, element.id)}/>
         ))}
         <Button success>ORDER</Button>

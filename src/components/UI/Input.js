@@ -39,10 +39,15 @@ const input = props => {
           invalid={props.invalid && props.touched}
           onChange={props.changed}/>;
   }
+  let validationError = null;
+  if (props.invalid && props.touched) {
+    validationError = <ValidationError>{props.errorMessage}</ValidationError>
+  }
   return (
     <InputWrapper>
       <Label>{props.label}</Label>
       {inputElement}
+      {validationError}
     </InputWrapper>
   );
 
@@ -102,5 +107,9 @@ const Select = styled.select`
     background-color: #ccc;
     outline: none;
   }
+`;
+const ValidationError = styled.p`
+  color: red;
+  margin: 5px 0;
 `;
 export default input;
