@@ -9,12 +9,14 @@ const input = props => {
       inputElement = <Input 
           {...props.elementConfig} 
           value={props.value}
+          invalid={props.invalid && props.touched}
           onChange={props.changed}/>;
       break;
     case ('textarea'):
       inputElement = <Textarea 
           {...props.elementConfig} 
           value={props.value}
+          invalid={props.invalid && props.touched}
           onChange={props.changed}/>;
       break;
     case ('select'):
@@ -34,6 +36,7 @@ const input = props => {
       inputElement = <Input 
           {...props.elementConfig} 
           value={props.value}
+          invalid={props.invalid && props.touched}
           onChange={props.changed}/>;
   }
   return (
@@ -59,8 +62,8 @@ const Label = styled.label`
 //TODO: figure out how to do it by one styled component
 const Input = styled.input`
   outline: none;
-  border: 1px solid #ccc;
-  background-color: white;
+  border: ${props => props.invalid ? "1px solid red" : "1px solid #ccc"};
+  background-color: ${props => props.invalid ? "#fda49a" : "white"};
   font: inherit;
   padding: 6px 10px;
   display: block;
@@ -73,8 +76,8 @@ const Input = styled.input`
 `;
 const Textarea = styled.textarea`
   outline: none;
-  border: 1px solid #ccc;
-  background-color: white;
+  border: ${props => props.invalid ? "1px solid red" : "1px solid #ccc"};
+  background-color: ${props => props.invalid ? "#fda49a" : "white"};
   font: inherit;
   padding: 6px 10px;
   display: block;
@@ -88,8 +91,8 @@ const Textarea = styled.textarea`
 
 const Select = styled.select`
   outline: none;
-  border: 1px solid #ccc;
-  background-color: white;
+  border: ${props => props.invalid ? "1px solid red" : "1px solid #ccc"};
+  background-color: ${props => props.invalid ? "#fda49a" : "white"};
   font: inherit;
   padding: 6px 10px;
   display: block;
