@@ -7,6 +7,7 @@ In this application you can make your own burger (by adding ingredients) and ord
 
 Script          | Description 
 -----           | -----------
+`install`       | Installs packages that project relay on.
 `start`         | Runs the app in the development mode.
 `test`          | Launches the test runner.
 `build`         | Builds the app for production to the `build` folder.
