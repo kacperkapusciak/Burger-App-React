@@ -8,25 +8,19 @@ import OrderSummary from '../components/Burger/OrderSummary';
 import Spinner from '../components/UI/Spinner';
 import withErrorHandler from '../hoc/withErrorHandler';
 import axios from '../axios-orders';
-import * as actionTypes from '../store/actions';
+
+import * as actions from '../store/actions/index';
 
 class BurgerBuilder extends Component {
 
   state = {
     purchasing: false,
-    loading: false,
-    error: false
   }
 
-  componentDidMount ( ) {
-    // axios.get('https://burger-react-6775d.firebaseio.com/ingredients.json')
-    //   .then(response => {
-    //     this.setState({ingredients: response.data});
-    //   })
-    //   .catch(error => {
-    //     this.setState({error: true})
-    //   });
+  componentDidMount () {
+    this.props.onFetchIngredients();
   }
+
   updatePurchaseState (ingredients) {
     const sum = Object.keys(ingredients)
       .map(igKey => {
@@ -48,6 +42,7 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
+    this.props.onInitPurchase();
     this.props.history.push('/checkout');
   }
 
@@ -62,7 +57,7 @@ class BurgerBuilder extends Component {
     let orderSummary = null;
 
     
-    let burger = this.state.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
+    let burger = this.props.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
     if(this.props.ingredients) {
       burger = (
         <>
@@ -82,10 +77,6 @@ class BurgerBuilder extends Component {
       cancelled={this.purchaseCancelHandler}
       accepted={this.purchaseContinueHandler}/>;
     }
-    
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    }
 
     return (
       <>
@@ -100,16 +91,19 @@ class BurgerBuilder extends Component {
 
 const mapStateToProps = state => {
   return {
-    ingredients: state.ingredients,
-    price: state.totalPrice
+    ingredients: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    error: state.burgerBuilder.error
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: (ingredientName) => dispatch({type: actionTypes.ADD_INGREDIENT, ingredientName: ingredientName}),
-    onIngredientRemoved: (ingredientName) => dispatch({type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingredientName}),
+    onIngredientAdded: (ingredientName) => dispatch(actions.addIngredient(ingredientName)),
+    onIngredientRemoved: (ingredientName) => dispatch(actions.removeIngredient(ingredientName)),
+    onFetchIngredients: () => dispatch(actions.fetchIngredients()),
+    onInitPurchase: () => dispatch(actions.purchaseInit())
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
