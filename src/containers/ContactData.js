@@ -184,15 +184,15 @@ class ContactData extends Component {
       form = <Spinner />;
     }
     return(
-      <Wrapper>
+      <StyledForm>
         <h4>Enter your Contact Data</h4>
         {form}
-      </Wrapper>
+      </StyledForm>
     );
   }
 }
 
-const Wrapper = styled.div`
+export const StyledForm = styled.div`
   margin: 20px auto;
   width: 80%;
   text-align: center;
