@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Input from '../components/UI/Input';
 import Button from '../styled/UI/Button';
+import Spinner from '../components/UI/Spinner';
 import { StyledForm } from './ContactData';
 import * as actions from '../store/actions/index';
 
@@ -97,7 +98,7 @@ class Auth extends Component {
       })
     }
 
-    const form = formElementsArray.map(element => (
+    let form = formElementsArray.map(element => (
       <Input 
         key={element.id}
         elementType={element.config.elementType}
@@ -108,6 +109,10 @@ class Auth extends Component {
         errorMessage={element.config.errorMessage}
         changed={(event) => this.inputChangedHandler(event, element.id)}/>
     ));
+    
+    if (this.props.loading) {
+      form = <Spinner />;
+    }
 
     return (
       <StyledForm>
@@ -123,10 +128,16 @@ class Auth extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    loading: state.auth.loading
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     onAuth: ( email, password, isSignup ) => dispatch(actions.auth(email, password, isSignup))
   };
 };
 
-export default connect( null, mapDispatchToProps)(Auth);
+export default connect( mapStateToProps, mapDispatchToProps)(Auth);
