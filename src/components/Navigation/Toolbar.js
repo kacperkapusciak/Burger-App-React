@@ -9,7 +9,7 @@ const toolbar = props => (
     <DrawerToggle clicked={props.drawerToggleClicked}/>
     <Logo height="80%"/>
     <Nav>
-      <NavItems />
+      <NavItems isAuth={props.isAuth}/>
     </Nav>
   </Header>
 );
