@@ -40,7 +40,8 @@ class Auth extends Component {
         touched: false,
         errorMessage: "Password must be at least 6 characters" 
       }
-    }
+    },
+    isSignup: true
   }
 
   checkValidity(value, rules) {
@@ -76,9 +77,16 @@ class Auth extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value);
+    this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup);
   }
 
+  switchAuthModeHandler = () => {
+    this.setState(prevState => {
+      return {
+        isSignup: !prevState.isSignup
+      };
+    });
+  }
 
   render () {
     const formElementsArray = [];
@@ -107,6 +115,9 @@ class Auth extends Component {
           {form}
           <Button success>SUBMIT</Button>
         </form>
+        <Button 
+          onClick={this.switchAuthModeHandler} 
+          danger>SWITCH TO {this.state.isSignup ? 'SIGN-IN' : 'SIGN-UP'}</Button>
       </StyledForm>
     );
   }
@@ -114,7 +125,7 @@ class Auth extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAuth: (email, password) => dispatch(actions.auth(email, password))
+    onAuth: ( email, password, isSignup ) => dispatch(actions.auth(email, password, isSignup))
   };
 };
 
