@@ -35,7 +35,7 @@ class App extends Component {
             <Route path="/" exact component={BurgerBuilder} />
             <Redirect to="/" />
         </Switch>
-      )
+      );
     }
     return (
       <div>
@@ -49,13 +49,13 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.token !== null
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState())
-  }
-}
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
