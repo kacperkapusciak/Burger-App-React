@@ -20,8 +20,7 @@ const StyledNavLink = styled(NavLink)`
   color: ${props => props.active ? "#40a4c8" : "#8f5c2c"};
 
   &:hover, &:active, &.active {
-    /*color: #40a4c8;*/
-    color: white;
+    color: #40a4c8;
   }
 
   @media (min-width: 500px) {
