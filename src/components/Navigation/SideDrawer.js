@@ -11,7 +11,7 @@ const sideDrawer = (props) => {
       <Drawer open={props.open} >
         <Logo height="11%" marginBottom="32px"/>
         <Nav>
-          <NavItems />
+          <NavItems isAuth={props.isAuth}/>
         </Nav>
       </Drawer>
     </>
