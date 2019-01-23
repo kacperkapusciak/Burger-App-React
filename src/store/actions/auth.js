@@ -49,11 +49,13 @@ export const auth = (email, password, isSignup) => {
       returnSecureToken: true
     };
     
-    //TODO split that url
-    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + apiKey;
+    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/'
     if (!isSignup) {
-      url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + apiKey;
+      url += 'verifyPassword?key=' + apiKey;
+    } else {
+      url += 'signupNewUser?key=' + apiKey;
     }
+
     axios.post(url, authData)
     .then(res => {
       const exporationDate = new Date(new Date().getTime() + res.data.expiresIn * 1000);
