@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
-import Button from '../styled/UI/Button';
+import Button from '../components/UI/Button';
 import Spinner from '../components/UI/Spinner';
 import Input from '../components/UI/Input';
 import axios from '../axios-orders';

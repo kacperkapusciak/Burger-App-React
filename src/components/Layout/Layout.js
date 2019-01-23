@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import Main from '../../styled/Layout/Main';
+import styled from 'styled-components';
 import Toolbar from '../Navigation/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer';
 
@@ -36,6 +36,10 @@ class Layout extends Component {
     )
   }
 };
+
+const Main = styled.div`
+  margin-top: 72px;
+`;
 
 const mapStateToProps = state => {
   return {

@@ -1,17 +1,7 @@
 import React from 'react';
 import Burger from '../Burger/Burger';
-import Button from '../../styled/UI/Button';
+import Button from '../UI/Button';
 import styled from 'styled-components';
-
-const Styling = styled.div`
-  text-align: center;
-  width: 80%;
-  margin: auto;
-`;
-
-const Wrapper = styled.div`
-  margin: 0 auto;
-`;
 
 const checkoutSummary = props => {
   return (
@@ -28,5 +18,15 @@ const checkoutSummary = props => {
     </Styling>
   );
 }
+
+const Styling = styled.div`
+  text-align: center;
+  width: 80%;
+  margin: auto;
+`;
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+`;
 
 export default checkoutSummary;

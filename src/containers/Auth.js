@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import Input from '../components/UI/Input';
-import Button from '../styled/UI/Button';
+import Button from '../components/UI/Button';
 import Spinner from '../components/UI/Spinner';
 import { StyledForm } from './ContactData';
 import * as actions from '../store/actions/index';
