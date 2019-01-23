@@ -79,6 +79,7 @@ const Input = styled.input`
     outline: none;
   }
 `;
+
 const Textarea = styled.textarea`
   outline: none;
   border: ${props => props.invalid ? "1px solid red" : "1px solid #ccc"};
@@ -108,8 +109,10 @@ const Select = styled.select`
     outline: none;
   }
 `;
+
 const ValidationError = styled.p`
   color: red;
   margin: 5px 0;
 `;
+
 export default input;

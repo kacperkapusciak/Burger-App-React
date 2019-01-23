@@ -8,7 +8,6 @@ import Checkout from './containers/Checkout';
 import Orders from './containers/Orders';
 import Auth from './containers/Auth';
 import Logout from './containers/Logout';
-import { dispatch } from 'rxjs/internal/observable/range';
 import * as actions from './store/actions/index';
 
 class App extends Component {
