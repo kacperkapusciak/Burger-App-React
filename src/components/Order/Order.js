@@ -40,4 +40,5 @@ const StyledOrder = styled.div`
   margin: 10px auto;
   box-sizing: border-box;
 `;
+
 export default order;

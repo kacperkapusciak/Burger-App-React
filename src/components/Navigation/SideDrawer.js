@@ -8,7 +8,7 @@ const sideDrawer = (props) => {
   return (
     <>
       <Backdrop show={props.open} clicked={props.closed}/>
-      <Drawer open={props.open} >
+      <Drawer open={props.open} onClick={props.closed}>
         <Logo height="11%" marginBottom="32px"/>
         <Nav>
           <NavItems isAuth={props.isAuth}/>
@@ -17,6 +17,5 @@ const sideDrawer = (props) => {
     </>
   );
 };
-
 
 export default sideDrawer;

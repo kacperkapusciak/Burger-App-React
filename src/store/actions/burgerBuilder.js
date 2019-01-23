@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import { dispatch } from 'rxjs/internal/observable/pairs';
 import axios from '../../axios-orders';
 
 export const addIngredient = name => {
