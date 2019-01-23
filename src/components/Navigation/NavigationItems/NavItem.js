@@ -19,7 +19,10 @@ const StyledNavLink = styled(NavLink)`
   display: block;
   color: ${props => props.active ? "#40a4c8" : "#8f5c2c"};
 
-  &:hover, &:active, &.active {
+  &:hover, &:active {
+    color: #40a4c8;
+  }
+  &.active {
     color: #40a4c8;
   }
 
@@ -35,6 +38,7 @@ const StyledNavLink = styled(NavLink)`
     &:hover, &:active, &.active {
       background-color: #8f5c2c;
       border-bottom: 4px solid #40a4c8;
+      color: white;
     }
   }
 `;
