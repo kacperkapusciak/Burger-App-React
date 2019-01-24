@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Logo';
-import NavItems from './NavItems/NavItems';
+import NavItems from '../Navigation/NavItems';
 import {Nav, Drawer} from '../../styled/Navigation/NavStyling';
 import Backdrop from '../UI/Backdrop';
 
