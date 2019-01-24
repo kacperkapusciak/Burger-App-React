@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo';
 import {Header, Nav} from '../../styled/Navigation/ToolbarStyling';
-import NavItems from './NavItems';
+import NavItems from './NavItems/NavItems';
 import DrawerToggle from './DrawerToggle';
 
 const toolbar = props => (
