@@ -1,6 +1,6 @@
 import React from 'react';
-import NavItem from './NavigationItems/NavItem';
-import {Nav} from '../../styled/Navigation/NavStyling';
+import NavItem from './NavItem';
+import {Nav} from '../../../styled/Navigation/NavStyling';
 
 const navigationItems = (props) => (
   <Nav>
