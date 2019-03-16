@@ -32,7 +32,7 @@ const order = props => {
   );
 };
 
-const StyledOrder = styled.div`
+export const StyledOrder = styled.div`
   width: 80%;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
