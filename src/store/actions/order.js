@@ -4,12 +4,12 @@ import axios from "../../axios-orders";
 export const purchaseBurgerSuccess = (id, orderData) => ({
   type: actionTypes.PURCHASE_BURGER_SUCCESS,
   orderId: id,
-  orderData: orderData
+  orderData
 });
 
 export const purchaseBurgerFail = error => ({
   type: actionTypes.PURCHASE_BURGER_FAIL,
-  error: error
+  error
 });
 
 export const purchaseBurgerStart = () => ({
@@ -18,8 +18,8 @@ export const purchaseBurgerStart = () => ({
 
 export const purchaseBurger = (orderData, token) => ({
   type: actionTypes.PURCHASE_BURGER,
-  orderData: orderData,
-  token: token
+  orderData,
+  token
 });
 
 export const purchaseInit = () => ({
@@ -28,21 +28,20 @@ export const purchaseInit = () => ({
 
 export const fetchOrdersSuccess = orders => ({
   type: actionTypes.FETCH_ORDERS_SUCCESS,
-  orders: orders
+  orders
 });
 
 export const fetchOrdersFail = error => ({
   type: actionTypes.FETCH_ORDERS_FAIL,
-  error: error
+  error
 });
 
 export const fetchOrdersStart = () => ({
-
-    type: actionTypes.FETCH_ORDERS_START
+  type: actionTypes.FETCH_ORDERS_START
 });
 
 export const fetchOrders = (token, userId) => ({
   type: actionTypes.FETCH_ORDERS,
-  token: token,
-  userId: userId
+  token,
+  userId
 });

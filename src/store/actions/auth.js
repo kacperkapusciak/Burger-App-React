@@ -6,13 +6,13 @@ export const authStart = () => ({
 
 export const authSuccess = (token, userId) => ({
   type: actionTypes.AUTH_SUCCESS,
-  token: token,
-  userId: userId
+  token,
+  userId
 });
 
 export const authFail = error => ({
   type: actionTypes.AUTH_FAIL,
-  error: error
+  error
 });
 
 export const logout = () => ({
@@ -25,19 +25,19 @@ export const logoutSucceed = () => ({
 
 export const chechAuthTimeout = expirationTime => ({
   type: actionTypes.AUTH_CHECK_TIMEOUT,
-  expirationTime: expirationTime
+  expirationTime
 });
 
 export const auth = (email, password, isSignup) => ({
   type: actionTypes.AUTH_USER,
-  email: email,
-  password: password,
-  isSignup: isSignup
+  email,
+  password,
+  isSignup
 });
 
 export const setAuthRedirectPath = path => ({
   type: actionTypes.SET_AUTH_REDIRECT_PATH,
-  path: path
+  path
 });
 
 export const authCheckState = () => ({

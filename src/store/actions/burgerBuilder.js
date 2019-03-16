@@ -12,7 +12,7 @@ export const removeIngredient = name => ({
 
 export const setIngredients = ingredients => ({
   type: actionTypes.SET_INGREDIENTS,
-  ingredients: ingredients
+  ingredients
 });
 
 export const fetchIngredientsFailed = () => ({
